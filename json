@@ -1,0 +1,17 @@
+ {
+  "name":"swami",
+  "email":"swami@example.com",
+  "mobile": "9023766566",
+  "orderItemsList":[
+    {
+      "dish":"pizza",
+      "quantity":3,
+      "feedback":"cheesey"
+    },
+    {
+      "dish":"pasta",
+      "quantity":1,
+      "feedback":"best lasangna i ever had!!"
+    }
+  ]
+}
