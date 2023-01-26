@@ -1,17 +1,14 @@
-package com.confluxsys.demo.model;
+package com.confluxsys.demo.model.orderedItems;
 
-import com.confluxsys.demo.bean.CustomerOrder;
-import com.confluxsys.demo.bean.OrderItems;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
-public class OrderMapper implements RowMapper {
+public class OrderedItemsMapper implements RowMapper {
     @Override
     public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
-        Orders orders = new Orders();
+        OrderedItems orders = new OrderedItems();
 
         orders.setDish(rs.getString("dish"));  // get customer name from customers table
         orders.setQuantity(rs.getInt("quantity"));

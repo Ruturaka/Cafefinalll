@@ -1,14 +1,14 @@
-package com.confluxsys.demo.model;
+package com.confluxsys.demo.model.customer;
 
-import com.confluxsys.demo.bean.CustomerOrder;
-import com.confluxsys.demo.bean.OrderItems;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
+
 
 public class CustomerMapper implements RowMapper<Customer> {
+
     @Override
     public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
         Customer customer = new Customer();

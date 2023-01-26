@@ -13,17 +13,13 @@ public class CustomerOrder {
     private List<OrderItems> orderItemsList;
 
     public CustomerOrder() {
+        System.out.println("inside customerorder default constructor");
     }
     public CustomerOrder(String name, String email, String mobile) {
+        System.out.println("inside customerorder parameterized constructor");
         this.name=name;
         this.email=email;
         this.mobile=mobile;
-    }
-    public CustomerOrder(String name, String email, String mobile, List<OrderItems> orderItemsList) {
-        this.name=name;
-        this.email=email;
-        this.mobile=mobile;
-        this.orderItemsList = orderItemsList;
     }
 
     public String getName() {

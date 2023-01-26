@@ -1,14 +1,19 @@
 package com.confluxsys.demo.bean;
 
 public class OrderItems {
+    Integer order_id;
+
     String dish;
     Integer quantity;
     String feedback;
 
     public OrderItems() {
+        System.out.println("inside orderitems parameterized constructor");
+
     }
 
     public OrderItems(String dish, Integer quantity, String feedback) {
+        System.out.println("inside orderitems parameterized constructor");
         this.dish = dish;
         this.quantity=quantity;
         this.feedback=feedback;
@@ -36,6 +41,14 @@ public class OrderItems {
 
     public void setFeedback(String feedback) {
         this.feedback = feedback;
+    }
+
+    public Integer getOrder_id() {
+        return order_id;
+    }
+
+    public void setOrder_id(Integer order_id) {
+        this.order_id = order_id;
     }
 
     @Override

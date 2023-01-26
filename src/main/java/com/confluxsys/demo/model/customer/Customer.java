@@ -1,18 +1,22 @@
-package com.confluxsys.demo.model;
+package com.confluxsys.demo.model.customer;
 
 import com.confluxsys.demo.bean.OrderItems;
 
 import java.util.List;
 
 public class Customer {
+    private Integer customer_id;
     private String name;
     private String email;
     private String mobile;
-    private Integer order_id;
 
     public Customer() {
+        System.out.println("inside customer default constructor");
+
     }
     public Customer(String name, String email, String mobile) {
+        System.out.println("inside customer parameterized constructor");
+
         this.name=name;
         this.email=email;
         this.mobile=mobile;
@@ -43,6 +47,13 @@ public class Customer {
         this.mobile = mobile;
     }
 
+    public Integer getCustomer_id() {
+        return customer_id;
+    }
+
+    public void setCustomer_id(Integer customer_id) {
+        this.customer_id = customer_id;
+    }
 
     @Override
     public String toString() {
