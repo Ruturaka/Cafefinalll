@@ -1,11 +1,16 @@
-package com.confluxsys.demo.spring.dao.order;
+package com.confluxsys.demo.spring.dao.Order;
 
+import com.confluxsys.demo.model.Orders.Order;
 import com.confluxsys.demo.model.orderedItems.OrderedItems;
-import com.confluxsys.demo.model.orders.Order;
+
+import java.util.List;
 
 public interface OrderDao {
     Integer createOrder(Order order); //post
-    //orderedItemsDao.addOrderItems(orderId, orderItemsList);
-    //Integer addOrderItems(Integer orderId, OrderedItems orderedItemsList);
+
+    Integer deleteById(Integer id);
+
+    Integer deleteAll();
+
 
 }
