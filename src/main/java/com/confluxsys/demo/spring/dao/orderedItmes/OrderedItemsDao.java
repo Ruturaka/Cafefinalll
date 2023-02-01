@@ -1,10 +1,19 @@
-package com.confluxsys.demo.spring.dao.orderedItmes;
+package com.confluxsys.demo.spring.dao.orderedItems;
 
 import com.confluxsys.demo.model.orderedItems.OrderedItems;
 
-public interface OrderedItemsDao {
-    int createOrderedItems(OrderedItems orderedItems); //post
-   // Integer addOrderItems(Integer orderId, OrderedItems orderedItemsList);
+import java.util.List;
 
+public interface OrderedItemsDao{
 
-}
+    Integer createOrderedItems(OrderedItems orderedItems); //post
+    
+    Integer deleteById(Integer id);
+
+    List<OrderedItems> findAll();
+
+    List<OrderedItems> findByDish(String mobile);
+
+    Integer deleteAll();
+
+    }
