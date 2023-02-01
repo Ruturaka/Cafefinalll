@@ -53,26 +53,5 @@ public class OrderDaoImpl implements OrderDao{
         return jdbcTemplate.update("DELETE from ordered_items");
     }
 
-    /*
-    @Override
-    public Integer updateOrder(Order order) {
-        //return jdbcTemplate.update("update customers set name=?, email=? WHERE mobile=?", new Object[] {customer.getName(), customer.getEmail(), customer.getMobile()});
-return null;
-       // return jdbcTemplate.queryForObject("update customer set order_id, customer_id WHERE order_id=?", new Object[] {order.or"});
-    }
-
-    @Override
-    public Integer deleteOrder(Integer customer_id) {
-        //        return jdbcTemplate.update("DELETE FROM ordered_items WHERE order_id=?", order_id);
-        return jdbcTemplate.update("DELETE FROM orders WHERE customer_id=?", customer_id);
-    }
-*/
-
-
-/*
-  System.out.println("inside orderdao");
-        String query="INSERT INTO orders(customer_id) VALUES (?) RETURNING order_id";
-        int customer_id = jdbcTemplate.queryForObject(query, Integer.class, new Object[] {order.getCustomer_id()}, Integer.class);
-        return customer_id;
- */
+   
 }
