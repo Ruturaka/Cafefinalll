@@ -1,8 +1,8 @@
-package com.confluxsys.demo.spring.dao.order;
+package com.confluxsys.demo.spring.dao.Order;
 
+import com.confluxsys.demo.model.Orders.Order;
+import com.confluxsys.demo.model.Orders.OrderMapper;
 import com.confluxsys.demo.model.orderedItems.OrderedItems;
-import com.confluxsys.demo.model.orders.Order;
-import com.confluxsys.demo.spring.dao.order.OrderDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -10,14 +10,12 @@ import org.springframework.stereotype.Component;
 import javax.sql.DataSource;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Types;
-
-
-
+import java.util.List;
 
 @Component
-public class OrderDaoImpl implements OrderDao {
+public class OrderDaoImpl implements OrderDao{
+
     JdbcTemplate jdbcTemplate;
 
     @Autowired
@@ -44,26 +42,37 @@ public class OrderDaoImpl implements OrderDao {
         return 0;
     }
 
-    /*@Override
-    public Integer addOrderItems(Integer orderId, List<OrderedItems> orderedItemsList){
-            for (OrderedItems orderedItem : orderedItemsList) {
-                // Insert the ordered item into the database
-                String sql = "INSERT INTO ordered_items (order_id, item_id, quantity) VALUES (?, ?, ?)";
+    @Override
+    public Integer deleteById(Integer id) {
+        String query="DELETE FROM orders where order_id=?";
+        return jdbcTemplate.update(query,id);
+    }
 
-                try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                    statement.setInt(1, orderId);
-                    statement.setInt(2, orderedItem.getItemId());
-                    statement.setInt(3, orderedItem.getQuantity());
+    @Override
+    public Integer deleteAll() {
+        return jdbcTemplate.update("DELETE from ordered_items");
+    }
 
-                    statement.executeUpdate();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
+    /*
+    @Override
+    public Integer updateOrder(Order order) {
+        //return jdbcTemplate.update("update customers set name=?, email=? WHERE mobile=?", new Object[] {customer.getName(), customer.getEmail(), customer.getMobile()});
+return null;
+       // return jdbcTemplate.queryForObject("update customer set order_id, customer_id WHERE order_id=?", new Object[] {order.or"});
+    }
 
-            return orderId;  // Return the order ID to indicate success
-        }
-    }*/
+    @Override
+    public Integer deleteOrder(Integer customer_id) {
+        //        return jdbcTemplate.update("DELETE FROM ordered_items WHERE order_id=?", order_id);
+        return jdbcTemplate.update("DELETE FROM orders WHERE customer_id=?", customer_id);
+    }
+*/
+
+
+/*
+  System.out.println("inside orderdao");
+        String query="INSERT INTO orders(customer_id) VALUES (?) RETURNING order_id";
+        int customer_id = jdbcTemplate.queryForObject(query, Integer.class, new Object[] {order.getCustomer_id()}, Integer.class);
+        return customer_id;
+ */
 }
-
-
